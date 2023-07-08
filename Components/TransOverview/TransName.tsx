@@ -1,11 +1,9 @@
-import React from 'react';
-
-const TransName = ({name} : {name: string}) => {
-    return (
-        <h4 className='text-[#1D1D1F] font-semibold text-[15px] leading-6'>
-            {name}
-        </h4>
-    );
+const TransName = ({ name, fontSize = 15 }: { name: string; fontSize?: number }) => {
+  return (
+    <h4 style={{ fontSize }} className="text-[#1D1D1F] font-semibold leading-6 h-[22px]">
+      {name}
+    </h4>
+  );
 };
 
 export default TransName;

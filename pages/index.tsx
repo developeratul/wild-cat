@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import AppBar from '@/Components/AppBar'
-import Sidebar from '@/Components/Sidebar'
+import AppBar from "@/Components/AppBar";
+import ContentPanel from "@/Components/ContentPanel";
+import Sidebar from "@/Components/Sidebar";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -11,7 +11,8 @@ export default function Home() {
       <div className="flex">
         <AppBar />
         <Sidebar />
+        <ContentPanel />
       </div>
     </>
-  )
+  );
 }

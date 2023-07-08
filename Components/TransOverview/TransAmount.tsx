@@ -1,11 +1,15 @@
-import React from 'react';
+import { FontProps } from "@/types";
 
-const TransAmount = ({amount} : {amount : string}) => {
-	return (
-		<p className='text-[#494949] font-medium text-[13px] leading-4 text-right'>
-			${amount}
-		</p>
-	);
+interface TransAmountProps extends FontProps {
+  amount: string;
+}
+
+const TransAmount = ({ amount, fontSize = 13, fontWeight = 500 }: TransAmountProps) => {
+  return (
+    <p className="text-[#494949] leading-4 text-right" style={{ fontSize, fontWeight }}>
+      ${amount}
+    </p>
+  );
 };
 
 export default TransAmount;

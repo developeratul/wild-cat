@@ -1,6 +1,13 @@
 import Image from "next/image";
 
-const AvatarSmall = ({ avatar, name }: { avatar?: string; name: string }) => {
+export interface AvatarSmallProps {
+  avatar?: string;
+  name: string;
+  size?: number;
+  fontSize?: string;
+}
+
+const AvatarSmall = ({ avatar, name, size = 40, fontSize = "0.9375rem" }: AvatarSmallProps) => {
   return (
     <>
       {avatar ? (
@@ -8,11 +15,14 @@ const AvatarSmall = ({ avatar, name }: { avatar?: string; name: string }) => {
           className="rounded-full object-cover bg-center"
           src={avatar}
           alt={name}
-          width={40}
-          height={40}
+          width={size}
+          height={size}
         />
       ) : (
-        <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#60B495] text-white">
+        <div
+          style={{ width: size, height: size, fontSize }}
+          className="rounded-full flex items-center justify-center bg-[#60B495] text-white"
+        >
           {name[0]}
         </div>
       )}
