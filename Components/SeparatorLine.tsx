@@ -1,11 +1,11 @@
-import React from 'react';
+import { Separator } from "./ui/separator";
 
 const SeparatorLine = () => {
-	return (
-		<>
-			<hr className='border-[#D2D2D7] border-1' />
-		</>
-	);
+  return (
+    <>
+      <Separator />
+    </>
+  );
 };
 
 export default SeparatorLine;

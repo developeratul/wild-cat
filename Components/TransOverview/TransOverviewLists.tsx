@@ -1,18 +1,23 @@
-import React from "react";
+import { fetchCharacters, selectCharacter } from "@/redux/features/characterSlice";
+import { useAppDispatch } from "@/redux/store";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import TransLoading from "./TransLoading";
 import TransOverview from "./TransOverview";
 
 const TransOverviewLists: React.FC = () => {
-  const dummyData = [
-    {
-      name: "John Doe",
-      image:
-        "https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg",
-    },
-  ];
+  const dispatch = useAppDispatch();
+  const { characters, loading } = useSelector(selectCharacter);
+
+  useEffect(() => {
+    dispatch(fetchCharacters({ currentPage: 1 }));
+  }, [dispatch]);
+
+  if (loading) return <TransLoading />;
 
   return (
     <div className="flex flex-col gap-2">
-      {dummyData.map((character, i) => (
+      {characters.map((character, i) => (
         <TransOverview
           key={i}
           name={character.name}
