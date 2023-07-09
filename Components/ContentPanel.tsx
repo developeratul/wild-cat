@@ -1,5 +1,5 @@
 import UserInfo from "./UserInfo";
-import UserPostRoot from "./UserPost";
+import UserPostRoot, { DisputePost, UserPostWithoutLink } from "./UserPost";
 import { Separator } from "./ui/separator";
 
 export default function ContentPanel() {
@@ -13,6 +13,8 @@ export default function ContentPanel() {
         />
         <Separator />
         <UserPostRoot />
+        <UserPostWithoutLink />
+        <DisputePost />
       </div>
     </div>
   );
